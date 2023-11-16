@@ -1,6 +1,6 @@
 PERMIT_ATTRIBUTES = %w[NAME]
 
-namespace :client do
+namespace :clients do
   task search: :environment do
     has_params = PERMIT_ATTRIBUTES.any? { |attr| ENV["#{attr}"].present? }
 
