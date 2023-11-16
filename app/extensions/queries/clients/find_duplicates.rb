@@ -3,7 +3,7 @@ module Queries
     class FindDuplicates
       class << self
         def perform(clients: Client.all)
-          new(clients: clients).query
+          new(clients).query
         end
       end
 
@@ -13,7 +13,7 @@ module Queries
 
       def query
         emails = Client.group(:email).having("COUNT(*) > 1").select("email")
-        clients.where(email: emails)
+        @clients.where(email: emails)
       end
     end
   end
