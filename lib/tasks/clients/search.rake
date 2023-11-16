@@ -12,7 +12,7 @@ namespace :clients do
       result_clients = Queries::Clients::Search.perform(filter_params: filter_params)
 
       if result_clients.present?
-        result_clients.each { |client| puts client.full_name; }
+        result_clients.each { |client| puts client.full_name }
       else
         puts "No clients were found."
       end
