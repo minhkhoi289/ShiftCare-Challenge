@@ -1,24 +1,32 @@
-# README
+# ShiftCare-Challenge
+## Requirements
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby version: 3.2.2
+- Database: PostgreSQL
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+```bash
+bundle install
+rails db:setup
+```
 
-* System dependencies
+## Command Line
+### Search Clients by Name
+Search through all clients and return those with names partially matching a given search query:
 
-* Configuration
+```bash
+rake clients:search NAME="name"
+```
 
-* Database creation
+### Find Duplicate Emails
+Find out if there are any clients with the same email in the dataset, and show those duplicates if any are found:
 
-* Database initialization
+```bash
+rake clients:find_duplicates
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Assumption
+I think about your `Next steps`.
+We can consider enhancing the Queries::Clients::Search query and the Client model to handle searching from JSON files.
+Converting all functions to APIs is not a major concern as we can leverage the existing Queries module.
